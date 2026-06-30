@@ -1,0 +1,45 @@
+Field	Type	Null	Key	Default	Extra
+UserID	int	NO	PRI	NULL	auto_increment
+Username	varchar(100)	NO		NULL	
+Email	varchar(100)	NO	UNI	NULL	
+Password	varchar(255)	NO		NULL	
+Address	text	YES		NULL	
+Role	enum('CUSTOMER','RESTAURANT_OWNER','DELIVERY_PARTNER','ADMIN')	NO		CUSTOMER	
+CreatedDate	datetime	YES		CURRENT_TIMESTAMP	DEFAULT_GENERATED
+LastLoginDate	datetime	YES		NULL	
+Field	Type	Null	Key	Default	Extra
+restaurantid	int	NO	PRI	NULL	auto_increment
+name	varchar(40)	YES		NULL	
+cuisineType	varchar(45)	YES		NULL	
+deliveryTime	int	YES		NULL	
+address	tinytext	YES		NULL	
+rating	decimal(10,2)	YES		NULL	
+isactive	tinyint	YES		NULL	
+imagepath	varchar(500)	YES		NULL	
+description	text	YES		NULL	
+priceRange	varchar(10)	YES		NULL	
+openingTime	varchar(20)	YES		NULL	
+closingTime	varchar(20)	YES		NULL	
+Field	Type	Null	Key	Default	Extra
+menuid	int	NO	PRI	NULL	auto_increment
+restaurantid	int	NO	MUL	NULL	
+itemname	varchar(100)	NO		NULL	
+description	text	YES		NULL	
+price	decimal(10,2)	NO		NULL	
+isavailable	tinyint(1)	YES		1	
+imagepath	varchar(500)	YES		NULL	
+category	varchar(50)	YES		NULL	
+Field	Type	Null	Key	Default	Extra
+OrderID	int	NO	PRI	NULL	auto_increment
+UserID	int	NO	MUL	NULL	
+OrderDate	datetime	YES		CURRENT_TIMESTAMP	DEFAULT_GENERATED
+TotalAmount	decimal(10,2)	NO		NULL	
+Status	enum('PLACED','CONFIRMED','PREPARING','OUT_FOR_DELIVERY','DELIVERED','CANCELLED')	YES		PLACED	
+PaymentMethod	enum('COD','UPI','CARD')	YES		NULL	
+RestaurantID	int	NO	MUL	NULL	
+Field	Type	Null	Key	Default	Extra
+OrderItemID	int	NO	PRI	NULL	auto_increment
+OrderID	int	NO	MUL	NULL	
+Quantity	int	NO		NULL	
+ItemTotal	decimal(10,2)	NO		NULL	
+MenuID	int	NO	MUL	NULL	

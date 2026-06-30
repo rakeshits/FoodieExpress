@@ -1,0 +1,26 @@
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Tables_in_food_app
+menu
+orderitem
+ordertable
+restaurant
+user
+mysql: [Warning] Using a password on the command line interface can be insecure.
+restaurantid	name	cuisinetype	isactive
+1	Pizza Hut	Italian	1
+2	Burger King	Fast Food	1
+3	Biryani House	Indian	1
+4	Pizza Hut	Italian	1
+5	Burger King	Fast Food	1
+6	Biryani House	Indian	1
+7	Pizza Hut	Italian	1
+8	Burger King	Fast Food	1
+9	Biryani House	Indian	1
+mysql: [Warning] Using a password on the command line interface can be insecure.
+userid	username	email
+1	Rahul	rahul@gmail.com
+2	Arjun	arjun@gmail.com
+3	Kiran	kiran@gmail.com
+4	Vikram	vikram@gmail.com
+5	Suresh	suresh@gmail.com
+Done 

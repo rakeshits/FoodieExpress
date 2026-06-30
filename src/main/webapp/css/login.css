@@ -1,0 +1,149 @@
+/* ─── AUTH PAGE LAYOUT ──────────────────────────────── */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-20);
+  background: var(--color-velvet-wine);
+}
+
+/* ─── LOGO ─────────────────────────────────────────── */
+.logo {
+  font-size: 48px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-impossible-red);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  margin-bottom: var(--spacing-8);
+  animation: fadeIn 0.4s ease;
+}
+.logo span { color: var(--color-bone-white); }
+
+.logo-subtitle {
+  font-size: var(--text-body);
+  color: var(--color-blush-highlight);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--spacing-32);
+  animation: fadeIn 0.4s ease;
+}
+
+/* ─── AUTH CARD ─────────────────────────────────────── */
+.card {
+  background: var(--color-burgundy-stage);
+  border: 1px solid var(--color-butcher-black);
+  border-radius: var(--radius-feature);
+  padding: var(--spacing-40);
+  width: 100%; max-width: 440px;
+  animation: fadeInUp 0.5s ease;
+}
+
+.card h2 {
+  font-size: var(--text-heading-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-bone-white);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: 6px;
+}
+.card p {
+  font-size: 16px;
+  color: var(--color-blush-highlight);
+  margin-bottom: var(--spacing-24);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+}
+
+/* ─── FORM ──────────────────────────────────────────── */
+.form-group { margin-bottom: 18px; }
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-bone-white);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: 6px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--color-velvet-wine);
+  border: 1px solid var(--color-burgundy-stage);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-body-sm);
+  font-family: var(--font-primary);
+  color: var(--color-bone-white);
+  outline: none;
+  transition: border-color 0.2s;
+}
+input[type="email"]::placeholder,
+input[type="password"]::placeholder { color: rgba(255,199,198,0.4); }
+input[type="email"]:focus,
+input[type="password"]:focus { border-color: var(--color-impossible-red); }
+
+.btn-submit {
+  width: 100%;
+  background: var(--color-impossible-red);
+  color: var(--color-bone-white);
+  border: none;
+  padding: 14px; border-radius: var(--radius-btn);
+  font-family: var(--font-primary);
+  font-size: 16px; font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  text-transform: uppercase; letter-spacing: var(--tracking-tight);
+  transition: background 0.2s, transform 0.15s;
+  margin-top: var(--spacing-8);
+}
+.btn-submit:hover { background: #c90500; }
+.btn-submit:active { transform: scale(0.97); }
+
+/* ─── DIVIDER ───────────────────────────────────────── */
+.divider {
+  text-align: center;
+  color: var(--color-blush-highlight);
+  font-size: var(--text-body-sm);
+  margin: var(--spacing-20) 0;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+}
+.divider::before, .divider::after {
+  content: ''; position: absolute; top: 50%;
+  width: 40%; height: 1px; background: var(--color-burgundy-stage);
+}
+.divider::before { left: 0; } .divider::after { right: 0; }
+
+/* ─── AUTH LINKS ────────────────────────────────────── */
+.link-register, .link-login {
+  text-align: center;
+  font-size: var(--text-body-sm);
+  color: var(--color-blush-highlight);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+}
+.link-register a, .link-login a {
+  color: var(--color-impossible-red);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+.link-register a:hover, .link-login a:hover { text-decoration: underline; }
+
+/* ─── BACK LINK ─────────────────────────────────────── */
+.back-link { text-align: center; margin-top: var(--spacing-20); }
+.back-link a {
+  color: var(--color-blush-highlight);
+  text-decoration: none;
+  font-size: var(--text-body-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  transition: color 0.2s;
+}
+.back-link a:hover { color: var(--color-bone-white); }

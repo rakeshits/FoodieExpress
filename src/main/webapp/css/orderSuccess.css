@@ -1,0 +1,168 @@
+/* ─── MAIN ─────────────────────────────────────────── */
+main { max-width: 640px; margin: 0 auto; padding: 60px 5%; text-align: center; }
+
+/* ─── SUCCESS CIRCLE ────────────────────────────────── */
+.success-circle {
+  width: 100px; height: 100px; border-radius: 50%;
+  background: linear-gradient(135deg, #48c479, #2dbe6c);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto var(--spacing-24);
+  animation: popIn 0.5s ease;
+}
+.success-circle svg { width: 50px; height: 50px; stroke: #fff; }
+
+/* ─── SUCCESS HEADLINE ──────────────────────────────── */
+h1 {
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-impossible-red);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  margin-bottom: 10px;
+}
+.subtitle {
+  font-size: var(--text-body);
+  color: var(--color-blush-highlight);
+  margin-bottom: var(--spacing-40);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+}
+.subtitle strong { color: var(--color-bone-white); font-weight: var(--font-weight-bold); }
+
+/* ─── DELIVERY TRACKER ──────────────────────────────── */
+.tracker {
+  background: var(--color-burgundy-stage);
+  border: 1px solid var(--color-butcher-black);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-24);
+  margin-bottom: var(--spacing-24);
+  text-align: left;
+  animation: fadeInUp 0.5s ease;
+}
+.tracker h3 {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-bone-white);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--spacing-20);
+}
+
+.steps { display: flex; justify-content: space-between; position: relative; }
+.steps::before {
+  content: ''; position: absolute; top: 16px; left: 10%; right: 10%;
+  height: 3px; background: var(--color-butcher-black); z-index: 0;
+}
+.step { text-align: center; flex: 1; position: relative; z-index: 1; }
+.step-dot {
+  width: 32px; height: 32px; border-radius: 50%;
+  margin: 0 auto 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--text-body-sm);
+}
+.step-dot.done    { background: #48c479; color: #fff; }
+.step-dot.active  { background: var(--color-impossible-red); color: #fff; animation: pulse 1.5s infinite; }
+.step-dot.pending { background: var(--color-burgundy-stage); color: var(--color-blush-highlight); border: 1px solid var(--color-butcher-black); }
+
+.step-label { font-size: 12px; text-transform: uppercase; letter-spacing: var(--tracking-tight); color: var(--color-blush-highlight); }
+.step-label.done   { color: #48c479; font-weight: var(--font-weight-bold); }
+.step-label.active { color: var(--color-impossible-red); font-weight: var(--font-weight-bold); }
+
+/* ─── ORDER DETAILS CARD ────────────────────────────── */
+.order-card {
+  background: var(--color-burgundy-stage);
+  border: 1px solid var(--color-butcher-black);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-24);
+  text-align: left;
+  margin-bottom: var(--spacing-24);
+  animation: fadeInUp 0.5s ease;
+}
+.order-card h3 {
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-bone-white);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--spacing-16);
+  padding-bottom: var(--spacing-12);
+  border-bottom: 1px solid var(--color-butcher-black);
+}
+
+.detail-row {
+  display: flex; justify-content: space-between;
+  font-size: var(--text-body-sm);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.detail-row:last-child { border-bottom: none; }
+.detail-label {
+  color: var(--color-blush-highlight);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+}
+.detail-value {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-bone-white);
+}
+.detail-value-red { color: var(--color-impossible-red) !important; }
+
+.status-badge {
+  background: rgba(72,196,121,0.15);
+  color: #48c479;
+  padding: 3px 10px; border-radius: var(--radius-pill);
+  font-size: var(--text-body-sm); font-weight: var(--font-weight-bold);
+  text-transform: uppercase; letter-spacing: var(--tracking-tight);
+}
+
+/* ─── ITEM ROWS ─────────────────────────────────────── */
+.items-wrap { margin-top: var(--spacing-16); }
+.item-row {
+  display: flex; align-items: center; gap: var(--spacing-12);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-butcher-black);
+}
+.item-row:last-child { border-bottom: none; }
+.item-img { width: 50px; height: 50px; border-radius: var(--radius-sm); object-fit: cover; }
+.item-name {
+  flex: 1;
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-bone-white);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+}
+.item-price {
+  font-size: var(--text-body-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-impossible-red);
+}
+
+/* ─── ACTIONS ───────────────────────────────────────── */
+.actions {
+  display: flex; gap: 14px; justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease;
+}
+.btn-primary {
+  background: var(--color-impossible-red); color: var(--color-bone-white);
+  text-decoration: none; padding: 13px 28px; border-radius: var(--radius-btn);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold); font-size: var(--text-body-sm);
+  text-transform: uppercase; letter-spacing: var(--tracking-tight);
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: #c90500; }
+.btn-primary:active { transform: scale(0.97); }
+.btn-secondary {
+  background: transparent; color: var(--color-bone-white);
+  text-decoration: none; padding: 13px 28px; border-radius: var(--radius-btn);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold); font-size: var(--text-body-sm);
+  border: 1px solid var(--color-bone-white);
+  text-transform: uppercase; letter-spacing: var(--tracking-tight);
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+}
+.btn-secondary:hover { border-color: var(--color-blush-highlight); color: var(--color-blush-highlight); }
+.btn-secondary:active { transform: scale(0.97); }
